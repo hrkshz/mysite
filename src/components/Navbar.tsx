@@ -16,10 +16,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY }) => {
                 </a>
                 <nav className={styles.nav}>
                     <ul className={styles.navList}>
-                        <li><a href="#about" className={styles.navLink}>About</a></li>
-                        <li><a href="#projects" className={styles.navLink}>Projects</a></li>
-                        <li><a href="#skills" className={styles.navLink}>Skills</a></li>
-                        <li><a href="#contact" className={styles.navLink}>Contact</a></li>
+                        <li><a href="#about" className={styles.navLink}>経歴</a></li>
+                        <li><a href="#projects" className={styles.navLink}>プロジェクト</a></li>
+                        <li><a href="#skills" className={styles.navLink}>スキル・資格</a></li>
+                        <li><a href="#contact" className={styles.navLink}>基本情報</a></li>
                     </ul>
                 </nav>
             </div>

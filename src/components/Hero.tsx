@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, BookOpen } from 'lucide-react';
 import styles from './Hero.module.css';
 
 const Hero: React.FC = () => {
@@ -20,22 +20,21 @@ const Hero: React.FC = () => {
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.3 }}
                     >
-                        Hello, I am
+                        こんにちは、
                     </motion.span>
                     <h1 className={styles.title}>
-                        A Creative <br />
-                        <span className="text-gradient">Frontend Developer</span>
+                        <span className="text-gradient">新里 浩己</span> です。
                     </h1>
                     <p className={styles.subtitle}>
-                        I build modern, interactive, and high-performance web applications.
-                        Let's turn your ideas into functional realities.
+                        インフラエンジニアとして培ってきた大規模システムの構築・運用経験を活かし、
+                        現在はモダンなフロントエンド技術を用いたWebアプリケーション開発にも挑戦しています。
                     </p>
                     <div className={styles.actions}>
                         <a href="#projects" className={styles.primaryBtn}>
-                            View My Work <ArrowRight size={18} />
+                            制作物を見る <ArrowRight size={18} />
                         </a>
-                        <a href="/resume.pdf" className={styles.secondaryBtn}>
-                            Download CV <Download size={18} />
+                        <a href="#about" className={styles.secondaryBtn}>
+                            経歴を見る <BookOpen size={18} />
                         </a>
                     </div>
                 </motion.div>

@@ -5,16 +5,25 @@ import styles from './Skills.module.css';
 const Skills: React.FC = () => {
     const skillCategories = [
         {
-            title: 'Frontend',
-            skills: ['React', 'TypeScript', 'Next.js', 'Vue', 'Tailwind CSS', 'Framer Motion']
+            title: 'インフラ・クラウド (Infrastructure & Cloud)',
+            skills: ['AWS (EC2, RDS, VPC, S3)', 'Linux (RHEL, CentOS, AlmaLinux)', 'Apache', 'MySQL', 'SELinux']
         },
         {
-            title: 'Backend',
-            skills: ['Node.js', 'Express', 'Python', 'PostgreSQL', 'MongoDB']
+            title: 'フロントエンド・その他 (Frontend & Tools)',
+            skills: ['React', 'TypeScript', 'Vite', 'HTML/CSS', 'Git', 'Vercel']
         },
         {
-            title: 'Tools & Other',
-            skills: ['Git', 'Docker', 'Vercel', 'AWS', 'Figma', 'Jest']
+            title: '保有資格 (Qualifications)',
+            skills: [
+                'AWS Certified Solutions Architect - Professional (2023年10月)',
+                'AWS Certified SysOps Administrator - Associate (2024年12月)',
+                'LinuC レベル2 (2024年8月)',
+                'Google サイバーセキュリティ プロフェッショナル (2024年9月)',
+                'Google AI Essentials V1 (2024年9月)',
+                '貿易実務検定 C級 (2005年8月)',
+                '安全保障輸出管理実務能力認定試験 Associate (2014年5月)',
+                'ServiceNow CSA (取得予定)'
+            ]
         }
     ];
 
@@ -28,7 +37,7 @@ const Skills: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className={styles.title}>My Skills</h2>
+                    <h2 className={styles.title}>スキル・資格 (Skills & Qualifications)</h2>
                     <div className={styles.line}></div>
                 </motion.div>
 
