@@ -19,18 +19,26 @@ export default async function handler(
             headers: {
                 Authorization: `Bearer ${token}`,
                 Accept: 'application/vnd.github.v3+json',
+                'User-Agent': 'Vercel-Portfolio-App'
             },
         });
 
         if (!res.ok) {
-            const errorData = await res.json();
-            return response.status(res.status).json({ error: 'GitHub API error', details: errorData });
+            let errorMessage = 'GitHub API error';
+            let errorDetails = {};
+            try {
+                errorDetails = await res.json();
+            } catch (e) {
+                const text = await res.text();
+                errorDetails = { rawText: text };
+            }
+            return response.status(res.status).json({ error: errorMessage, details: errorDetails });
         }
 
         const data = await res.json();
         return response.status(200).json(data);
-    } catch (error) {
+    } catch (error: any) {
         console.error('Error fetching from GitHub:', error);
-        return response.status(500).json({ error: 'Failed to fetch code from GitHub' });
+        return response.status(500).json({ error: 'Failed to fetch code from GitHub', message: error.message });
     }
 }
