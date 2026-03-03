@@ -60,22 +60,6 @@ const Projects: React.FC = () => {
                                 transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                             >
                                 <div className={styles.imageContainer}>
-                                    <div className={styles.overlay}>
-                                        <div className={styles.links}>
-                                            {project.isPrivateCode ? (
-                                                <button onClick={() => setIsViewerOpen(true)} className={styles.iconLink} aria-label="View Private Source Code">
-                                                    <Lock size={20} />
-                                                </button>
-                                            ) : (
-                                                <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="GitHub Repository">
-                                                    <Github size={20} />
-                                                </a>
-                                            )}
-                                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.iconLink} aria-label="Live Demo">
-                                                <ExternalLink size={20} />
-                                            </a>
-                                        </div>
-                                    </div>
                                     <img src={project.image} alt={project.title} className={styles.image} />
                                     {project.isPrivateCode && (
                                         <div className={styles.privateBadge}>
@@ -91,12 +75,26 @@ const Projects: React.FC = () => {
                                             <span key={tIndex} className={styles.tag}>{tag}</span>
                                         ))}
                                     </div>
+                                    <div className={styles.visibleActionLinks}>
+                                        {project.isPrivateCode ? (
+                                            <button onClick={() => setIsViewerOpen(true)} className={styles.actionBtn}>
+                                                <Lock size={16} /> View Code
+                                            </button>
+                                        ) : (
+                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.actionBtn}>
+                                                <Github size={16} /> Source Code
+                                            </a>
+                                        )}
+                                        <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.actionBtnPrimary}>
+                                            <ExternalLink size={16} /> Live Demo
+                                        </a>
+                                    </div>
                                 </div>
                             </motion.div>
                         ))}
                     </div>
                 </div>
-            </section>
+            </section >
 
             <CodeViewer
                 isOpen={isViewerOpen}
