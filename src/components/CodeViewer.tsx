@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { vs } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { X, File, Folder, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './CodeViewer.module.css';
@@ -145,7 +145,7 @@ const CodeViewer: React.FC<CodeViewerProps> = ({ isOpen, onClose, projectName })
                                     <div className={styles.codeHeader}>{currentPath.split('/').pop()}</div>
                                     <SyntaxHighlighter
                                         language={getLanguageFromExtension(currentPath)}
-                                        style={vscDarkPlus}
+                                        style={vs}
                                         customStyle={{ margin: 0, borderRadius: '0 0 8px 8px', overflowX: 'auto', height: '100%', fontSize: '14px' }}
                                         showLineNumbers={true}
                                     >

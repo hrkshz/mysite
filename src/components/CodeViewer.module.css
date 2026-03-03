@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(8px);
   z-index: 1000;
   display: flex;
@@ -14,16 +14,16 @@
 }
 
 .modal {
-  background: #1e1e1e;
+  background: var(--bg-secondary);
   width: 100%;
   max-width: 1100px;
   height: 85vh;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
 }
 
 .header {
@@ -31,8 +31,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 1.5rem;
-  background: #252526;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .titleInfo {
@@ -42,19 +42,19 @@
 }
 
 .title {
-  color: #fff;
+  color: var(--text-primary);
   font-size: 1.1rem;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
 }
 
 .subtitle {
-  color: #8c8c8c;
+  color: var(--text-tertiary);
   font-size: 0.85rem;
 }
 
 .closeButton {
-  color: #8c8c8c;
+  color: var(--text-tertiary);
   background: transparent;
   border: none;
   cursor: pointer;
@@ -65,8 +65,8 @@
 }
 
 .closeButton:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
 }
 
 .content {
@@ -77,21 +77,21 @@
 
 .sidebar {
   width: 250px;
-  background: #252526;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  background: var(--bg-primary);
+  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
 }
 
 .sidebarHeader {
   padding: 0.75rem 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--border-color);
   font-size: 0.9rem;
-  color: #cccccc;
+  color: var(--text-secondary);
 }
 
 .backButton {
-  color: #3b82f6;
+  color: var(--accent-primary);
   background: none;
   border: none;
   cursor: pointer;
@@ -117,10 +117,10 @@
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 6px 1rem;
+  padding: 8px 1rem;
   background: transparent;
   border: none;
-  color: #cccccc;
+  color: var(--text-secondary);
   cursor: pointer;
   text-align: left;
   font-size: 0.85rem;
@@ -128,21 +128,22 @@
 }
 
 .fileItem:hover {
-  background: #2a2d2e;
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .fileItem.active {
-  background: #37373d;
-  color: #fff;
+  background: rgba(0, 0, 0, 0.08);
+  color: var(--text-primary);
+  font-weight: 500;
 }
 
 .iconFolder {
-  color: #dcb67a;
+  color: #3b82f6;
   margin-right: 8px;
 }
 
 .iconFile {
-  color: #519aba;
+  color: #64748b;
   margin-right: 8px;
 }
 
@@ -154,7 +155,7 @@
 
 .mainPane {
   flex: 1;
-  background: #1e1e1e;
+  background: var(--bg-secondary);
   overflow: hidden;
   position: relative;
   display: flex;
@@ -168,13 +169,12 @@
 }
 
 .codeHeader {
-  background: #1e1e1e;
+  background: var(--bg-tertiary);
   padding: 8px 16px;
   font-size: 0.85rem;
-  color: #fff;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
   display: inline-block;
-  background: #2d2d2d;
   width: fit-content;
   border-radius: 8px 8px 0 0;
   margin-top: 8px;
@@ -187,7 +187,7 @@
   justify-content: center;
   align-items: center;
   height: 100%;
-  color: #666;
+  color: var(--text-tertiary);
 }
 
 .emptyIcon {
@@ -195,11 +195,12 @@
   opacity: 0.5;
 }
 
-.loader, .centerLoader {
+.loader,
+.centerLoader {
   display: flex;
   justify-content: center;
   padding: 2rem;
-  color: #666;
+  color: var(--text-tertiary);
 }
 
 .centerLoader {
@@ -212,7 +213,9 @@
 }
 
 @keyframes spin {
-  100% { transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .error {
@@ -226,20 +229,24 @@
   .overlay {
     padding: 0;
   }
+
   .modal {
     height: 100vh;
     border-radius: 0;
     border: none;
   }
+
   .content {
     flex-direction: column;
   }
+
   .sidebar {
     width: 100%;
     height: 30%;
     border-right: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid var(--border-color);
   }
+
   .mainPane {
     height: 70%;
   }
