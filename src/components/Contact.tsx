@@ -43,8 +43,8 @@ const Contact: React.FC = () => {
                                     <User size={20} />
                                 </div>
                                 <div>
-                                    <span className={styles.itemTitle}>お名前 / 生年月日</span>
-                                    <span className={styles.itemDesc}>新里 浩己 (1985年1月7日生)</span>
+                                    <span className={styles.itemTitle}>お名前</span>
+                                    <span className={styles.itemDesc}>新里 浩己</span>
                                 </div>
                             </div>
                             <div className={styles.item}>

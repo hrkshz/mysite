@@ -9,19 +9,35 @@ import './index.css';
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    return (localStorage.getItem('theme') as 'light' | 'dark') ?? 'light';
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+  }, [theme]);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollProgress(totalHeight > 0 ? (window.scrollY / totalHeight) * 100 : 0);
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleThemeToggle = () => {
+    setTheme(t => t === 'dark' ? 'light' : 'dark');
+  };
+
   return (
     <div className="app-container">
-      <Navbar scrollY={scrollY} />
+      <div className="scroll-progress" style={{ width: `${scrollProgress}%` }} />
+      <Navbar scrollY={scrollY} theme={theme} onThemeToggle={handleThemeToggle} />
       <main>
         <Hero />
         <About />
