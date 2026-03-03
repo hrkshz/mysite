@@ -18,6 +18,13 @@ interface CodeViewerProps {
     projectName: string;
 }
 
+interface ApiErrorPayload {
+    error?: string;
+    details?: unknown;
+    githubStatus?: number;
+    requestPath?: string;
+}
+
 const CodeViewer: React.FC<CodeViewerProps> = ({ isOpen, onClose, projectName }) => {
     const [files, setFiles] = useState<FileNode[]>([]);
     const [currentPath, setCurrentPath] = useState<string>('');
@@ -41,7 +48,25 @@ const CodeViewer: React.FC<CodeViewerProps> = ({ isOpen, onClose, projectName })
             const res = await fetch(`/api/github?path=${encodeURIComponent(path)}`, {
                 credentials: 'same-origin'
             });
-            if (!res.ok) throw new Error('Failed to fetch data');
+            if (!res.ok) {
+                const rawError = await res.text();
+                let parsedError: ApiErrorPayload | { rawText: string } = { rawText: rawError };
+
+                if (rawError) {
+                    try {
+                        parsedError = JSON.parse(rawError) as ApiErrorPayload;
+                    } catch {
+                        parsedError = { rawText: rawError };
+                    }
+                }
+
+                console.error('Failed to fetch GitHub data from proxy API', {
+                    httpStatus: res.status,
+                    requestPath: path,
+                    apiError: parsedError
+                });
+                throw new Error('Failed to fetch data');
+            }
             const data = await res.json();
 
             if (Array.isArray(data)) {
@@ -52,11 +77,11 @@ const CodeViewer: React.FC<CodeViewerProps> = ({ isOpen, onClose, projectName })
                 }));
             } else if (data.type === 'file') {
                 // It's a file
-                const content = atob(data.content);
+                const content = decodeBase64UTF8(data.content);
                 setFileContent(content);
                 setCurrentPath(data.path);
             }
-        } catch (err) {
+        } catch {
             setError('リポジトリデータの読み込みに失敗しました。');
         } finally {
             setIsLoading(false);
@@ -180,6 +205,21 @@ function getLanguageFromExtension(filename: string): string {
         case 'md': return 'markdown';
         case 'rb': return 'ruby';
         default: return 'javascript';
+    }
+}
+
+// Helper function to decode UTF-8 Base64 properly
+function decodeBase64UTF8(base64: string): string {
+    try {
+        const binString = atob(base64);
+        const bytes = new Uint8Array(binString.length);
+        for (let i = 0; i < binString.length; i++) {
+            bytes[i] = binString.charCodeAt(i);
+        }
+        return new TextDecoder('utf-8').decode(bytes);
+    } catch (e) {
+        console.error('Failed to decode base64 content', e);
+        return 'Error: Could not decode file content';
     }
 }
 
