@@ -38,7 +38,9 @@ const CodeViewer: React.FC<CodeViewerProps> = ({ isOpen, onClose, projectName })
         setIsLoading(true);
         setError(null);
         try {
-            const res = await fetch(`/api/github?path=${encodeURIComponent(path)}`);
+            const res = await fetch(`/api/github?path=${encodeURIComponent(path)}`, {
+                credentials: 'same-origin'
+            });
             if (!res.ok) throw new Error('Failed to fetch data');
             const data = await res.json();
 
@@ -55,7 +57,7 @@ const CodeViewer: React.FC<CodeViewerProps> = ({ isOpen, onClose, projectName })
                 setCurrentPath(data.path);
             }
         } catch (err) {
-            setError('Could not load repository data.');
+            setError('リポジトリデータの読み込みに失敗しました。');
         } finally {
             setIsLoading(false);
         }
@@ -95,7 +97,7 @@ const CodeViewer: React.FC<CodeViewerProps> = ({ isOpen, onClose, projectName })
                     <div className={styles.header}>
                         <div className={styles.titleInfo}>
                             <h3 className={styles.title}>{projectName}</h3>
-                            <span className={styles.subtitle}>Source Code</span>
+                            <span className={styles.subtitle}>リモートリポジトリ</span>
                         </div>
                         <button className={styles.closeButton} onClick={onClose}>
                             <X size={20} />
@@ -107,7 +109,7 @@ const CodeViewer: React.FC<CodeViewerProps> = ({ isOpen, onClose, projectName })
                             <div className={styles.sidebarHeader}>
                                 {currentPath ? (
                                     <button onClick={navigateBack} className={styles.backButton}>
-                                        ← Back
+                                        ← 戻る
                                     </button>
                                 ) : (
                                     <span className={styles.rootName}>school_diary</span>
@@ -155,7 +157,7 @@ const CodeViewer: React.FC<CodeViewerProps> = ({ isOpen, onClose, projectName })
                             ) : (
                                 <div className={styles.emptyState}>
                                     <File size={48} className={styles.emptyIcon} />
-                                    <p>Select a file to view its source code</p>
+                                    <p>ファイルを選択してソースコードを表示</p>
                                 </div>
                             )}
                         </div>

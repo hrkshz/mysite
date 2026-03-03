@@ -4,33 +4,27 @@ import { ExternalLink, Github, Lock } from 'lucide-react';
 import styles from './Projects.module.css';
 import CodeViewer from './CodeViewer';
 
+interface ProjectType {
+    title: string;
+    description: string;
+    image: string;
+    tags: string[];
+    isPrivateCode?: boolean;
+    github?: string;
+    demo: string;
+}
+
 const Projects: React.FC = () => {
     const [isViewerOpen, setIsViewerOpen] = useState(false);
 
-    const projects = [
+    const projects: ProjectType[] = [
         {
-            title: 'School Diary Application',
-            description: 'A comprehensive school diary application showcasing modern web development practices, clean UI design, and responsive layouts.',
+            title: '学校日誌アプリケーション (School Diary)',
+            description: 'モダンなWeb開発のベストプラクティス、クリーンなUIデザイン、レスポンシブなレイアウトを取り入れた包括的な学校日誌アプリケーションです。',
             image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop',
             tags: ['React', 'TypeScript', 'Vite', 'CSS Modules'],
             isPrivateCode: true,
             demo: 'https://d11e79eaa3tdud.cloudfront.net'
-        },
-        {
-            title: 'E-Commerce Platform',
-            description: 'A full-stack e-commerce solution with Next.js, Stripe integration, and a custom CMS dashboard.',
-            image: 'https://images.unsplash.com/photo-1557821552-17105176677c?q=80&w=1000&auto=format&fit=crop',
-            tags: ['Next.js', 'TypeScript', 'Tailwind', 'Stripe'],
-            github: '#',
-            demo: '#'
-        },
-        {
-            title: 'AI Dashboard',
-            description: 'Analytics dashboard featuring AI-driven insights and interactive charting using D3.js and React.',
-            image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop',
-            tags: ['React', 'D3.js', 'Node.js', 'Express'],
-            github: '#',
-            demo: '#'
         }
     ];
 
@@ -45,7 +39,7 @@ const Projects: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className={styles.title}>Featured Projects</h2>
+                        <h2 className={styles.title}>制作物 (Works)</h2>
                         <div className={styles.line}></div>
                     </motion.div>
 
@@ -78,15 +72,15 @@ const Projects: React.FC = () => {
                                     <div className={styles.visibleActionLinks}>
                                         {project.isPrivateCode ? (
                                             <button onClick={() => setIsViewerOpen(true)} className={styles.actionBtn}>
-                                                <Lock size={16} /> View Code
+                                                <Lock size={16} /> ソースコードを見る
                                             </button>
                                         ) : (
                                             <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.actionBtn}>
-                                                <Github size={16} /> Source Code
+                                                <Github size={16} /> ソースコード
                                             </a>
                                         )}
                                         <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.actionBtnPrimary}>
-                                            <ExternalLink size={16} /> Live Demo
+                                            <ExternalLink size={16} /> デモサイトを見る
                                         </a>
                                     </div>
                                 </div>
@@ -99,7 +93,7 @@ const Projects: React.FC = () => {
             <CodeViewer
                 isOpen={isViewerOpen}
                 onClose={() => setIsViewerOpen(false)}
-                projectName="School Diary API & Source"
+                projectName="School Diary ソースコード"
             />
         </>
     );
