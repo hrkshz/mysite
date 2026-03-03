@@ -1,29 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Lock } from 'lucide-react';
+import { ExternalLink, Github } from 'lucide-react';
 import styles from './Projects.module.css';
-import CodeViewer from './CodeViewer';
 
 interface ProjectType {
     title: string;
     description: string;
     image: string;
     tags: string[];
-    isPrivateCode?: boolean;
     github?: string;
     demo: string;
 }
 
 const Projects: React.FC = () => {
-    const [isViewerOpen, setIsViewerOpen] = useState(false);
-
     const projects: ProjectType[] = [
         {
             title: '学校日誌アプリケーション (School Diary)',
             description: 'モダンなWeb開発のベストプラクティス、クリーンなUIデザイン、レスポンシブなレイアウトを取り入れた包括的な学校日誌アプリケーションです。',
             image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop',
             tags: ['React', 'TypeScript', 'Vite', 'CSS Modules'],
-            isPrivateCode: true,
+            github: 'https://github.com/hrkshz/school_diary',
             demo: 'https://d11e79eaa3tdud.cloudfront.net'
         }
     ];
@@ -55,11 +51,6 @@ const Projects: React.FC = () => {
                             >
                                 <div className={styles.imageContainer}>
                                     <img src={project.image} alt={project.title} className={styles.image} />
-                                    {project.isPrivateCode && (
-                                        <div className={styles.privateBadge}>
-                                            <Lock size={12} className={styles.lockIcon} /> Private Repo
-                                        </div>
-                                    )}
                                 </div>
                                 <div className={styles.content}>
                                     <h3 className={styles.projectTitle}>{project.title}</h3>
@@ -70,15 +61,9 @@ const Projects: React.FC = () => {
                                         ))}
                                     </div>
                                     <div className={styles.visibleActionLinks}>
-                                        {project.isPrivateCode ? (
-                                            <button onClick={() => setIsViewerOpen(true)} className={styles.actionBtn}>
-                                                <Lock size={16} /> ソースコードを見る
-                                            </button>
-                                        ) : (
-                                            <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.actionBtn}>
-                                                <Github size={16} /> ソースコード
-                                            </a>
-                                        )}
+                                        <a href={project.github} target="_blank" rel="noopener noreferrer" className={styles.actionBtn}>
+                                            <Github size={16} /> GitHubを開く
+                                        </a>
                                         <a href={project.demo} target="_blank" rel="noopener noreferrer" className={styles.actionBtnPrimary}>
                                             <ExternalLink size={16} /> デモサイトを見る
                                         </a>
@@ -89,12 +74,6 @@ const Projects: React.FC = () => {
                     </div>
                 </div>
             </section >
-
-            <CodeViewer
-                isOpen={isViewerOpen}
-                onClose={() => setIsViewerOpen(false)}
-                projectName="School Diary ソースコード"
-            />
         </>
     );
 };
