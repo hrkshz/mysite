@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
                         こんにちは、
                     </motion.span>
                     <h1 className={styles.title}>
-                        <span className="text-gradient">新里 浩己</span> です。
+                        <ruby><span className="text-gradient">新里 浩己</span><rt className={styles.furigana}>しんざと ひろき</rt></ruby> です。
                     </h1>
                     <p className={styles.subtitle}>
                         インフラエンジニアとして培ってきた大規模システムの構築・運用経験を活かし、

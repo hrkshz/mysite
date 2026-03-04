@@ -26,8 +26,14 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .card {
@@ -208,4 +214,20 @@
 
 .lockIcon {
     color: #ffd700;
+}
+
+.timeBadge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    border-radius: 20px;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 5;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, Clock } from 'lucide-react';
 import styles from './Projects.module.css';
 
 interface ProjectType {
@@ -10,6 +10,7 @@ interface ProjectType {
     tags: string[];
     github: string;
     demo: string;
+    time: string;
 }
 
 const Projects: React.FC = () => {
@@ -20,7 +21,17 @@ const Projects: React.FC = () => {
             image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop',
             tags: ['React', 'TypeScript', 'Vite', 'CSS Modules'],
             github: 'https://github.com/hrkshz/school_diary',
-            demo: 'https://d11e79eaa3tdud.cloudfront.net'
+            demo: 'https://d11e79eaa3tdud.cloudfront.net',
+            time: '100h'
+        },
+        {
+            title: 'ポートフォリオサイト',
+            description: '転職活動用に制作した自己紹介サイト。React + TypeScript + Vite で構成し、ダークモードやスクロールアニメーション、レスポンシブ対応を実装しています。',
+            image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop',
+            tags: ['React', 'TypeScript', 'Vite', 'Framer Motion', 'CSS Modules'],
+            github: 'https://github.com/hrkshz/mysite',
+            demo: 'https://mysite-git-main-hiroki0107-7181s-projects.vercel.app/',
+            time: '2h'
         }
     ];
 
@@ -50,6 +61,10 @@ const Projects: React.FC = () => {
                         >
                             <div className={styles.imageContainer}>
                                 <img src={project.image} alt={project.title} className={styles.image} />
+                                <div className={styles.timeBadge}>
+                                    <Clock size={12} />
+                                    <span>{project.time}</span>
+                                </div>
                             </div>
                             <div className={styles.content}>
                                 <h3 className={styles.projectTitle}>{project.title}</h3>
