@@ -5,39 +5,57 @@ import styles from './Hero.module.css';
 
 const Hero: React.FC = () => {
     return (
-        <section className={styles.hero} id="home">
+        <section className={styles.hero} id="hero">
             <div className={styles.backgroundGlow}></div>
             <div className={`container ${styles.heroContainer}`}>
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className={styles.content}
-                >
+                <div className={styles.content}>
                     <motion.span
                         className={styles.greeting}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
-                        transition={{ delay: 0.3 }}
+                        transition={{ duration: 0.5 }}
                     >
                         こんにちは、
                     </motion.span>
-                    <h1 className={styles.title}>
+                    <motion.h1
+                        className={styles.title}
+                        initial={{ opacity: 0, y: 16 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.15 }}
+                    >
                         <ruby><span className="text-gradient">新里 浩己</span><rt className={styles.furigana}>しんざと ひろき</rt></ruby> です。
-                    </h1>
-                    <p className={styles.subtitle}>
-                        インフラエンジニアとして培ってきた大規模システムの構築・運用経験を活かし、
-                        現在はモダンなフロントエンド技術を用いたWebアプリケーション開発にも挑戦しています。
-                    </p>
-                    <div className={styles.actions}>
-                        <a href="#projects" className={styles.primaryBtn}>
+                    </motion.h1>
+                    <motion.p
+                        className={styles.subtitle}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                        インフラエンジニアからフロントエンドへ転向中。
+                        サーバー100台規模の運用経験があり、今はReactでWebアプリを作っています。
+                    </motion.p>
+                    <motion.span
+                        className={styles.statusBadge}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.4, delay: 0.4 }}
+                    >
+                        フロントエンドエンジニア志望
+                    </motion.span>
+                    <motion.div
+                        className={styles.actions}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 0.4, delay: 0.45 }}
+                    >
+                        <motion.a href="#projects" className={styles.primaryBtn} whileTap={{ scale: 0.97 }}>
                             制作物を見る <ArrowRight size={18} />
-                        </a>
-                        <a href="#about" className={styles.secondaryBtn}>
+                        </motion.a>
+                        <motion.a href="#about" className={styles.secondaryBtn} whileTap={{ scale: 0.97 }}>
                             経歴を見る <BookOpen size={18} />
-                        </a>
-                    </div>
-                </motion.div>
+                        </motion.a>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

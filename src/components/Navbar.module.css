@@ -67,6 +67,14 @@
     width: 100%;
 }
 
+.navLink.active {
+    color: var(--text-primary);
+}
+
+.navLink.active::after {
+    width: 100%;
+}
+
 /* Controls (theme toggle + hamburger) */
 .controls {
     display: flex;
@@ -128,7 +136,8 @@
     transition: background 0.15s ease, color 0.15s ease;
 }
 
-.mobileNavLink:hover {
+.mobileNavLink:hover,
+.mobileNavLink.active {
     background: var(--bg-tertiary);
     color: var(--text-primary);
 }

@@ -30,9 +30,9 @@ const engineerCareers: Career[] = [
             'ステークホルダー調整：利用サービスとの影響調査、テスト実施依頼',
         ],
         achievements: [
-            '重要案件において、徹底した影響調査とリスク評価により役職者の承認を取得',
-            '利用サービスとの密な調整により、100台規模のバージョンアップを計画通りに遂行',
-            '変更計画書、影響調査書、テスト計画書、プレゼン資料の作成',
+            '影響調査とリスク評価をまとめ、役職者の承認を取得',
+            '関係各所と調整しながら、100台のバージョンアップを予定通り完了',
+            '変更計画書・影響調査書・テスト計画書・プレゼン資料を作成',
         ],
         tech: 'AWS, Linux',
     },
@@ -101,8 +101,22 @@ const About: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className={styles.title}>職務経歴 (Career)</h2>
+                    <h2 className={styles.title}>職務経歴</h2>
                     <div className={styles.line}></div>
+                </motion.div>
+
+                <motion.div
+                    className={styles.narrative}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                    <p>
+                        製造、貿易、建設と業界を変えながら働いてきました。
+                        その後ITインフラエンジニアに転向し、金融機関やEC系のサーバー運用・AWS移行を経験。
+                        今はフロントエンド開発を学びながら、自分でWebアプリを作っています。
+                    </p>
                 </motion.div>
 
                 <div className={styles.timeline}>

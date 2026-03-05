@@ -7,16 +7,17 @@ interface NavbarProps {
     scrollY: number;
     theme: 'light' | 'dark';
     onThemeToggle: () => void;
+    activeSection: string;
 }
 
 const navLinks = [
-    { href: '#about', label: '経歴' },
-    { href: '#projects', label: 'プロジェクト' },
-    { href: '#skills', label: 'スキル・資格' },
-    { href: '#contact', label: '基本情報' },
+    { href: '#about', label: '経歴', section: 'about' },
+    { href: '#projects', label: 'プロジェクト', section: 'projects' },
+    { href: '#skills', label: 'スキル・資格', section: 'skills' },
+    { href: '#contact', label: '基本情報', section: 'contact' },
 ];
 
-const Navbar: React.FC<NavbarProps> = ({ scrollY, theme, onThemeToggle }) => {
+const Navbar: React.FC<NavbarProps> = ({ scrollY, theme, onThemeToggle, activeSection }) => {
     const isScrolled = scrollY > 50;
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -26,14 +27,14 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY, theme, onThemeToggle }) => {
         <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
             <div className={`container ${styles.navContainer}`}>
                 <a href="#" className={styles.logo}>
-                    <span className="text-gradient">Portfolio.</span>
+                    Shinzato
                 </a>
 
                 <nav className={styles.nav} aria-label="メインナビゲーション">
                     <ul className={styles.navList}>
                         {navLinks.map(link => (
                             <li key={link.href}>
-                                <a href={link.href} className={styles.navLink}>{link.label}</a>
+                                <a href={link.href} className={`${styles.navLink} ${activeSection === link.section ? styles.active : ''}`}>{link.label}</a>
                             </li>
                         ))}
                     </ul>
@@ -73,7 +74,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrollY, theme, onThemeToggle }) => {
                                 <li key={link.href}>
                                     <a
                                         href={link.href}
-                                        className={styles.mobileNavLink}
+                                        className={`${styles.mobileNavLink} ${activeSection === link.section ? styles.active : ''}`}
                                         onClick={closeMobileMenu}
                                     >
                                         {link.label}

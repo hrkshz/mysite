@@ -1,15 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, User } from 'lucide-react';
+import { Mail, MapPin, Github, User } from 'lucide-react';
 import styles from './Contact.module.css';
 
 const Contact: React.FC = () => {
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Logic for form submission would go here
-        alert("お問い合わせありがとうございます。（デモ用のフォームです）");
-    };
-
     return (
         <section className={styles.contact} id="contact">
             <div className="container">
@@ -20,79 +14,61 @@ const Contact: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6 }}
                 >
-                    <h2 className={styles.title}>基本情報・お問い合わせ</h2>
+                    <h2 className={styles.title}>基本情報</h2>
                     <div className={styles.line}></div>
                 </motion.div>
 
-                <div className={styles.grid}>
-                    <motion.div
-                        className={styles.info}
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        <h3 className={styles.subtitle}>お気軽にお問い合わせください</h3>
-                        <p className={styles.desc}>
-                            フォームまたはメールにてご連絡をお待ちしております。
-                        </p>
+                <motion.div
+                    className={styles.cardGrid}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                >
+                    <div className={styles.card}>
+                        <div className={styles.iconBox}>
+                            <User size={24} />
+                        </div>
+                        <span className={styles.cardLabel}>お名前</span>
+                        <span className={styles.cardValue}>新里 浩己</span>
+                    </div>
 
-                        <div className={styles.contactItems}>
-                            <div className={styles.item}>
-                                <div className={styles.iconBox}>
-                                    <User size={20} />
-                                </div>
-                                <div>
-                                    <span className={styles.itemTitle}>お名前</span>
-                                    <span className={styles.itemDesc}>新里 浩己</span>
-                                </div>
-                            </div>
-                            <div className={styles.item}>
-                                <div className={styles.iconBox}>
-                                    <Mail size={20} />
-                                </div>
-                                <div>
-                                    <span className={styles.itemTitle}>メールアドレス</span>
-                                    <a href="mailto:hiroki0107@gmail.com" className={styles.itemLink}>hiroki0107@gmail.com</a>
-                                </div>
-                            </div>
-                            <div className={styles.item}>
-                                <div className={styles.iconBox}>
-                                    <MapPin size={20} />
-                                </div>
-                                <div>
-                                    <span className={styles.itemTitle}>住所</span>
-                                    <span className={styles.itemDesc}>埼玉県所沢市</span>
-                                </div>
-                            </div>
+                    <div className={styles.card}>
+                        <div className={styles.iconBox}>
+                            <MapPin size={24} />
                         </div>
-                    </motion.div>
+                        <span className={styles.cardLabel}>住所</span>
+                        <span className={styles.cardValue}>埼玉県所沢市</span>
+                    </div>
 
-                    <motion.form
-                        className={styles.form}
-                        onSubmit={handleSubmit}
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.6, delay: 0.4 }}
-                    >
-                        <div className={styles.formGroup}>
-                            <input type="text" placeholder="お名前" className={styles.input} required />
+                    <div className={styles.card}>
+                        <div className={styles.iconBox}>
+                            <Mail size={24} />
                         </div>
-                        <div className={styles.formGroup}>
-                            <input type="email" placeholder="メールアドレス" className={styles.input} required />
+                        <span className={styles.cardLabel}>メール</span>
+                        <a href="mailto:hiroki0107@gmail.com" className={styles.cardLink}>hiroki0107@gmail.com</a>
+                    </div>
+
+                    <div className={`${styles.card} ${styles.cardDisabled}`}>
+                        <div className={styles.iconBox}>
+                            <Github size={24} />
                         </div>
-                        <div className={styles.formGroup}>
-                            <input type="text" placeholder="件名" className={styles.input} required />
-                        </div>
-                        <div className={styles.formGroup}>
-                            <textarea placeholder="メッセージ" rows={5} className={styles.textarea} required></textarea>
-                        </div>
-                        <button type="submit" className={styles.submitBtn}>
-                            送信する <Send size={18} />
-                        </button>
-                    </motion.form>
-                </div>
+                        <span className={styles.cardLabel}>GitHub</span>
+                        <span className={styles.cardValue}>準備中</span>
+                    </div>
+                </motion.div>
+
+                <motion.div
+                    className={styles.cta}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: 0.4 }}
+                >
+                    <a href="mailto:hiroki0107@gmail.com" className={styles.ctaBtn}>
+                        <Mail size={20} /> メールを送る
+                    </a>
+                </motion.div>
             </div>
         </section>
     );
