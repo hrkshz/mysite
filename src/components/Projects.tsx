@@ -11,6 +11,7 @@ interface ProjectType {
     github: string;
     demo: string;
     time: string;
+    availabilityNote?: string;
     challenge?: string;
     approach?: string;
     result?: string;
@@ -25,6 +26,7 @@ const projects: ProjectType[] = [
         github: 'https://github.com/hrkshz/school_diary',
         demo: 'https://d11e79eaa3tdud.cloudfront.net',
         time: '100h',
+        availabilityNote: '現在は GitHub を private にしており、デモ環境も停止しています。転職活動時には公開予定です。',
         challenge: '権限の異なる5ロールが使う業務アプリを、インフラ含めてひとりで作り切る。',
         approach: 'Django + DRFでAPI、Bootstrap + Django Templatesで画面を実装。優先度で未読を分類するInbox Pattern、3日連続メンタル低下を検知する警告機能などを組み込み。インフラはTerraformで管理。',
         result: 'AWSにCloudFront / ALB / EC2 / RDS構成でデプロイ。pytest + Playwrightでテスト、Ruff + mypyで静的解析まで実施。',
@@ -37,6 +39,7 @@ const projects: ProjectType[] = [
         github: 'https://github.com/hrkshz/PLUSHI-FOREST',
         demo: '',
         time: '開発中',
+        availabilityNote: '現在は GitHub を private にしており、デモ公開も控えています。転職活動時には公開予定です。',
         challenge: '家族の近い関係性では、直接だと強く聞こえる言葉や弱音が出しにくく、気持ちをやわらかく伝えられる場をどう設計するかが課題でした。',
         approach: 'ぬいぐるみになりきる体験を入口に、役割から少し距離を取って話せるUIを設計。実装はReact + HonoのMonorepoで進め、Supabase + Kyselyによる型安全なDB設計と、Terraformを前提にしたインフラ構成も検討しています。',
         result: 'コンセプト、画面体験、技術方針をドキュメント化しながらMVPを実装中。遊び心と安心感のあるコミュニケーション設計を形にしています。',
@@ -139,6 +142,9 @@ const Projects: React.FC = () => {
                                         </a>
                                     )}
                                 </div>
+                                {project.availabilityNote && (
+                                    <p className={styles.availabilityNote}>{project.availabilityNote}</p>
+                                )}
                             </div>
                         </motion.div>
                     ))}
