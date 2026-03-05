@@ -33,7 +33,7 @@ const projects: ProjectType[] = [
     },
     {
         title: 'Plushie Forest（開発中）',
-        description: '家族だけのクローズドSNS。好きなぬいぐるみになって会話することで、夫・妻・親・子といった役割から少し離れ、弱音や本音もやわらかく伝えやすくすることを目指したアプリ。',
+        description: '家族だけのクローズドSNS。好きなぬいぐるみになって会話することで、夫・妻・親・子といった役割から少し離れ、直接だと強くなりやすい言葉や弱音もやわらかく伝えやすくすることを目指したアプリ。遊び心のある“なりきり”を入口に、安心して気持ちを出しやすいコミュニケーションの形を考えています。',
         image: 'https://images.unsplash.com/photo-1559715541-5daf8a0296d0?q=80&w=1000&auto=format&fit=crop',
         tags: ['React', 'TypeScript', 'Hono', 'PostgreSQL', 'Supabase', 'Kysely', 'Terraform', 'Docker'],
         github: 'https://github.com/hrkshz/PLUSHI-FOREST',
