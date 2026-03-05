@@ -24,94 +24,6 @@
     border-radius: 2px;
 }
 
-/* Featured card */
-.featuredCard {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    background: var(--bg-tertiary);
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    margin-bottom: 2.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.featuredCard:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-    border-color: var(--accent-primary);
-}
-
-.featuredImage {
-    position: relative;
-    overflow: hidden;
-    min-height: 320px;
-}
-
-.featuredImage img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.featuredCard:hover .featuredImage img {
-    transform: scale(1.05);
-}
-
-.featuredContent {
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-}
-
-.featuredTitle {
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 0.75rem;
-}
-
-.featuredDesc {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-}
-
-/* Case study section */
-.caseStudy {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding: 1.25rem;
-    background: var(--bg-primary);
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-}
-
-.caseItem {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.caseLabel {
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--accent-primary);
-}
-
-.caseText {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin: 0;
-}
-
 /* Compact case study for regular cards */
 .caseStudyCompact {
     display: flex;
@@ -279,14 +191,6 @@
 }
 
 @media (max-width: 768px) {
-    .featuredCard {
-        grid-template-columns: 1fr;
-    }
-
-    .featuredImage {
-        min-height: 200px;
-    }
-
     .grid {
         grid-template-columns: 1fr;
     }

@@ -31,8 +31,8 @@ const Hero: React.FC = () => {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                        インフラエンジニアからフロントエンドへ転向中。
-                        サーバー100台規模の運用経験があり、今はReactでWebアプリを作っています。
+                        インフラ運用・AWS移行・自動化の経験を土台に、
+                        ServiceNowでの業務ワークフロー構築とITOM領域へのキャリア転換を目指しています。
                     </motion.p>
                     <motion.span
                         className={styles.statusBadge}
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.4, delay: 0.4 }}
                     >
-                        フロントエンドエンジニア志望
+                        ServiceNow / ITOM キャリア志向
                     </motion.span>
                     <motion.div
                         className={styles.actions}
