@@ -55,6 +55,18 @@ const projects: ProjectType[] = [
         approach: 'Framer Motionでアニメーション、CSS変数でダークモード切り替え、Vercelにデプロイ。',
         result: '継続的に改善中。',
     },
+    {
+        title: 'ポートフォリオテンプレート',
+        description: '自作のポートフォリオサイトをもとに、学習中の人でも使いやすい形に整理してテンプレート化しました。表示内容を一か所で編集できるようにし、手順書や解説もあわせて整えています。',
+        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop',
+        tags: ['React', 'TypeScript', 'Vite', 'CSS Modules', 'Documentation'],
+        github: 'https://github.com/hrkshz/Use-this-template',
+        demo: '',
+        time: '改善・整備',
+        challenge: 'ポートフォリオ作成は見た目を整える前に、どこをどう編集すればよいか分からず手が止まりやすい点が課題でした。',
+        approach: '表示データを profile.ts に集約し、README・編集ガイド・学習ガイドを用意して、実物を見ながら理解できる構成に整理しました。',
+        result: '完成品を配るだけでなく、内容を理解しながら自分で調整して使える土台としてまとめました。',
+    },
 ];
 
 const Projects: React.FC = () => {
