@@ -150,7 +150,30 @@
     font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.7;
+    margin-bottom: 0.9rem;
+}
+
+.highlightBox {
     margin-bottom: 1rem;
+    padding: 0.9rem 1rem;
+    background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(124, 58, 237, 0.08) 100%);
+    border: 1px solid rgba(37, 99, 235, 0.18);
+    border-radius: 12px;
+}
+
+.highlightLabel {
+    display: inline-block;
+    margin-bottom: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--accent-primary);
+}
+
+.highlightText {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-primary);
 }
 
 .sectionBlock {
@@ -173,6 +196,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
+    line-height: 1.65;
 }
 
 .techBadge {

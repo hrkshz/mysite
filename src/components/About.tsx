@@ -10,6 +10,7 @@ interface Career {
     role: string;
     project?: string;
     desc: string;
+    highlight?: string;
     tasks?: string[];
     achievements?: string[];
     tech?: string;
@@ -23,6 +24,7 @@ const engineerCareers: Career[] = [
         role: 'インフラエンジニア',
         project: '金融機関 基幹システム RHEL8.4 EOL対応バージョンアップ',
         desc: 'RHEL8.4のEOLに伴い、金融機関の基幹システム（本番環境サーバー100台）のバージョンアップを実施。PM配下でプロジェクト推進を担当。',
+        highlight: '100台規模の基幹システム更改で、影響調査・計画作成・関係者調整を担い、完了まで推進。',
         tasks: [
             '変更管理：100台規模のシステムバージョンアップのプロジェクト推進',
             '影響調査：ミドルウェアの洗い出し、互換性調査、基幹システムへの影響評価',
@@ -31,7 +33,7 @@ const engineerCareers: Career[] = [
         ],
         achievements: [
             '影響調査とリスク評価をまとめ、役職者の承認を取得',
-            '関係各所と調整しながら、100台のバージョンアップを予定通り完了',
+            '関係各所と調整しながら、100台のバージョンアップを完了まで推進',
             '変更計画書・影響調査書・テスト計画書・プレゼン資料を作成',
         ],
         tech: 'AWS, Linux',
@@ -43,6 +45,7 @@ const engineerCareers: Career[] = [
         role: 'インフラエンジニア',
         project: 'オンプレミス環境からAWSへのシステム移行',
         desc: 'オンプレミス環境からAWSへの移行や、OS移行を含む複数案件に参画。',
+        highlight: 'オンプレミスからAWSへの移行やOS移行を含む複数案件で、設計・構築・運用対応を担当。',
         tasks: [
             'バックオフィス統合情報管理システム AlmaLinux移行（CentOS 7サポート終了に伴うOS移行、SELinux全サーバー有効化）',
             'バックオフィスシステム AWS移行（冗長構成設計、VPC Peering構築）',
@@ -147,6 +150,12 @@ const About: React.FC = () => {
                                         <h4 className={styles.projectTitle}>{career.project}</h4>
                                     )}
                                     <p className={styles.cardDesc}>{career.desc}</p>
+                                    {career.highlight && (
+                                        <div className={styles.highlightBox}>
+                                            <span className={styles.highlightLabel}>成果ハイライト</span>
+                                            <p className={styles.highlightText}>{career.highlight}</p>
+                                        </div>
+                                    )}
 
                                     {career.tasks && career.tasks.length > 0 && (
                                         <div className={styles.sectionBlock}>

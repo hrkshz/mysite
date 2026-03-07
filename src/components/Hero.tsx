@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import styles from './Hero.module.css';
 
+const heroHighlights = ['インフラ運用', 'AWS移行', '運用改善・自動化'];
+
 const Hero: React.FC = () => {
     return (
         <section className={styles.hero} id="hero">
@@ -31,17 +33,21 @@ const Hero: React.FC = () => {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                        インフラ運用・AWS移行・自動化の経験を土台に、
-                        ServiceNowでの業務ワークフロー構築とITOM領域へのキャリア転換を目指しています。
+                        インフラ運用・AWS移行の実務経験を土台に、
+                        ServiceNow / ITOM 領域へのキャリア転換を目指しています。
                     </motion.p>
-                    <motion.span
-                        className={styles.statusBadge}
+                    <motion.div
+                        className={styles.highlightList}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.4, delay: 0.4 }}
                     >
-                        ServiceNow / ITOM キャリア志向
-                    </motion.span>
+                        {heroHighlights.map((highlight) => (
+                            <span key={highlight} className={styles.statusBadge}>
+                                {highlight}
+                            </span>
+                        ))}
+                    </motion.div>
                     <motion.div
                         className={styles.actions}
                         initial={{ opacity: 0 }}
@@ -52,7 +58,7 @@ const Hero: React.FC = () => {
                             制作物を見る <ArrowRight size={18} />
                         </motion.a>
                         <motion.a href="#about" className={styles.secondaryBtn} whileTap={{ scale: 0.97 }}>
-                            経歴を見る <BookOpen size={18} />
+                            経歴と実績を見る <BookOpen size={18} />
                         </motion.a>
                     </motion.div>
                 </div>
