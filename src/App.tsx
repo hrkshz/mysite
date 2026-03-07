@@ -3,13 +3,14 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
+import Writing from './components/Writing';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import './index.css';
 
-const sectionIds = ['hero', 'about', 'projects', 'skills', 'contact'];
+const sectionIds = ['hero', 'about', 'skills', 'writing', 'projects', 'contact'];
 
 function App() {
   const [scrollY, setScrollY] = useState(0);
@@ -77,6 +78,7 @@ function App() {
         <Hero />
         <About />
         <Skills />
+        <Writing />
         <Projects />
         <Contact />
       </main>

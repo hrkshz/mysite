@@ -12,8 +12,9 @@ interface NavbarProps {
 
 const navLinks = [
     { href: '#about', label: '経歴', section: 'about' },
-    { href: '#projects', label: 'プロジェクト', section: 'projects' },
     { href: '#skills', label: 'スキル・資格', section: 'skills' },
+    { href: '#writing', label: '技術発信', section: 'writing' },
+    { href: '#projects', label: 'プロジェクト', section: 'projects' },
     { href: '#contact', label: '基本情報', section: 'contact' },
 ];
 
