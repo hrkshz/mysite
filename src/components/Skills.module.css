@@ -69,7 +69,8 @@
 .skillItem {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 1rem;
     padding: 0.6rem 0;
     border-bottom: 1px solid var(--border-color);
 }
@@ -78,16 +79,31 @@
     border-bottom: none;
 }
 
+.skillText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+}
+
 .skillName {
     font-size: 0.95rem;
     color: var(--text-primary);
     font-weight: 500;
 }
 
+.skillDetail {
+    font-size: 0.8rem;
+    color: var(--text-tertiary);
+    line-height: 1.5;
+}
+
 .levelDots {
     display: flex;
     align-items: center;
     gap: 0.35rem;
+    flex-shrink: 0;
+    padding-top: 0.1rem;
 }
 
 .dot {
@@ -174,6 +190,11 @@
 @media (max-width: 768px) {
     .skillGrid {
         grid-template-columns: 1fr;
+    }
+
+    .skillItem {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
     .certGrid {

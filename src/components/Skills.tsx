@@ -8,6 +8,7 @@ type Level = 1 | 2 | 3;
 interface Skill {
     name: string;
     level: Level;
+    detail?: string;
 }
 
 interface Certification {
@@ -20,13 +21,26 @@ const skillCategories: { title: string; skills: Skill[] }[] = [
     {
         title: 'インフラ・クラウド',
         skills: [
-            { name: 'AWS (EC2, RDS, VPC, S3, CloudFront, ALB)', level: 3 },
-            { name: 'Linux (RHEL, CentOS, AlmaLinux)', level: 3 },
-            { name: 'CloudWatch', level: 2 },
-            { name: 'CloudTrail', level: 2 },
-            { name: 'IAM', level: 2 },
-            { name: 'CloudFormation', level: 2 },
-            { name: 'AWS Lambda (Node.js)', level: 2 },
+            {
+                name: 'AWS インフラ運用・移行',
+                level: 3,
+                detail: 'EC2, RDS, VPC, S3, CloudFront, ALB',
+            },
+            {
+                name: 'Linux サーバー運用',
+                level: 3,
+                detail: 'RHEL, CentOS, AlmaLinux',
+            },
+            {
+                name: '監視・権限管理',
+                level: 2,
+                detail: 'CloudWatch, CloudTrail, IAM',
+            },
+            {
+                name: '構成管理・自動化',
+                level: 2,
+                detail: 'CloudFormation, AWS Lambda (Node.js)',
+            },
             { name: 'Terraform', level: 1 },
             { name: 'Docker', level: 1 },
             { name: 'Apache', level: 2 },
@@ -95,7 +109,12 @@ const Skills: React.FC = () => {
                             <div className={styles.skillList}>
                                 {category.skills.map((skill, index) => (
                                     <div key={index} className={styles.skillItem}>
-                                        <span className={styles.skillName}>{skill.name}</span>
+                                        <div className={styles.skillText}>
+                                            <span className={styles.skillName}>{skill.name}</span>
+                                            {skill.detail && (
+                                                <span className={styles.skillDetail}>{skill.detail}</span>
+                                            )}
+                                        </div>
                                         <LevelDots level={skill.level} />
                                     </div>
                                 ))}
