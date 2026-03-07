@@ -1,10 +1,10 @@
 .about {
-    padding: 8rem 0;
+    padding: 6rem 0;
     background-color: var(--bg-secondary);
 }
 
 .header {
-    margin-bottom: 3rem;
+    margin-bottom: 2.25rem;
 }
 
 .title {
@@ -27,7 +27,7 @@
     border-left: 4px solid var(--accent-primary);
     padding: 1.5rem 2rem;
     border-radius: 0 12px 12px 0;
-    margin-bottom: 3rem;
+    margin-bottom: 2.25rem;
     font-size: 1rem;
     line-height: 1.8;
     color: var(--text-secondary);
@@ -104,7 +104,7 @@
 /* Engineer card */
 .engineerCard {
     background: var(--bg-tertiary);
-    padding: 2rem;
+    padding: 1.6rem;
     border-radius: 16px;
     border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -226,7 +226,7 @@
 
 @media (max-width: 768px) {
     .about {
-        padding: 5rem 0;
+        padding: 4rem 0;
     }
 
     .title {
