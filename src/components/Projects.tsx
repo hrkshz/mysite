@@ -40,7 +40,6 @@ const projects: ProjectType[] = [
         github: 'https://github.com/hrkshz/PLUSHI-FOREST',
         demo: '',
         time: '開発中',
-        availabilityNote: '現在は GitHub を private にしており、デモ公開も控えています。転職活動時には公開予定です。',
         challenge: '家族向けの小さな遊び場として、やわらかい空気を保ちながら、本音や弱音も出しやすい体験をどう作るかが課題でした。',
         approach: 'ぬいぐるみになりきることで気持ちを直接ぶつけすぎずに伝えられる体験を軸に、クローズドな場で安心してやり取りできるUIを検討。実装は React + Hono の Monorepo で進め、Supabase + Kysely による型安全なデータ設計と、Terraform を前提にした構成も合わせて整理しています。',
         result: 'コンセプトと画面体験を整理しながらMVPを実装中です。React + Hono をベースに、クローズドなコミュニケーションの土台を形にしています。',
