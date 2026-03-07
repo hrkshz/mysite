@@ -32,7 +32,7 @@ const Writing: React.FC = () => {
                         <div>
                             <h3 className={styles.cardTitle}>Zenn</h3>
                             <p className={styles.cardLead}>
-                                AWS / Terraform / Linux に加え、Lambda などの学習記録・検証内容を公開しています。
+                                AWS / Terraform / Linux などの学習記録や検証内容を公開しています。
                             </p>
                         </div>
                     </div>

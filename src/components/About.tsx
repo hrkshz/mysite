@@ -41,8 +41,8 @@ const engineerCareers: Career[] = [
         icon: <Cloud size={18} />,
         company: '会社B',
         role: 'インフラエンジニア',
-        project: 'オンプレミスからAWSへの大規模システム移行',
-        desc: 'オンプレミス環境からAWSへの移行を中心に、複数の大規模プロジェクトに参画。',
+        project: 'オンプレミス環境からAWSへのシステム移行',
+        desc: 'オンプレミス環境からAWSへの移行や、OS移行を含む複数案件に参画。',
         tasks: [
             'バックオフィス統合情報管理システム AlmaLinux移行（CentOS 7サポート終了に伴うOS移行、SELinux全サーバー有効化）',
             'バックオフィスシステム AWS移行（冗長構成設計、VPC Peering構築）',
@@ -114,8 +114,8 @@ const About: React.FC = () => {
                 >
                     <p>
                         製造、貿易、建設と業界を変えながら働いてきました。
-                        その後ITインフラエンジニアに転向し、サーバー運用、AWS移行の設計・構築・運用、CloudWatch / CloudTrail / IAM を含む監視・権限管理、Lambdaを用いた自動化などを経験しました。
-                        現在は、それらの経験を土台に、ServiceNowでの業務ワークフロー構築やITOM領域に携わることを目指して学習と制作を進めています。
+                        その後 IT インフラエンジニアに転向し、サーバー運用、AWS移行の設計・構築・運用、CloudWatch / CloudTrail / IAM を含む監視・権限管理、Lambda を用いた自動化に携わってきました。
+                        現在は、それらの経験を土台に、ServiceNow での業務ワークフロー構築や ITOM 領域を目指して学習と制作を進めています。
                     </p>
                 </motion.div>
 
