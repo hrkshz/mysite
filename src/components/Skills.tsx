@@ -20,12 +20,16 @@ const skillCategories: { title: string; skills: Skill[] }[] = [
     {
         title: 'インフラ・クラウド',
         skills: [
-            { name: 'AWS (EC2, RDS, VPC, S3, Lambda, CloudFront, ALB, IAM)', level: 3 },
+            { name: 'AWS (EC2, RDS, VPC, S3, CloudFront, ALB)', level: 3 },
             { name: 'Linux (RHEL, CentOS, AlmaLinux)', level: 3 },
-            { name: 'Terraform', level: 2 },
-            { name: 'Docker', level: 2 },
+            { name: 'CloudWatch', level: 2 },
+            { name: 'CloudTrail', level: 2 },
+            { name: 'IAM', level: 2 },
+            { name: 'CloudFormation', level: 2 },
+            { name: 'Lambda', level: 2 },
+            { name: 'Terraform', level: 1 },
+            { name: 'Docker', level: 1 },
             { name: 'Apache', level: 2 },
-            { name: 'SELinux', level: 2 },
         ],
     },
     {
@@ -35,7 +39,7 @@ const skillCategories: { title: string; skills: Skill[] }[] = [
             { name: 'TypeScript / React', level: 2 },
             { name: 'HTML / CSS', level: 2 },
             { name: 'PostgreSQL', level: 2 },
-            { name: 'Git', level: 2 },
+            { name: 'Git', level: 1 },
         ],
     },
 ];
@@ -51,7 +55,7 @@ const certifications: Certification[] = [
     { name: 'ServiceNow CSA', date: '取得予定' },
 ];
 
-const levelLabels = ['基礎', '実務', '得意'];
+const levelLabels = ['学習中', '実務経験', '強み'];
 
 const LevelDots: React.FC<{ level: Level }> = ({ level }) => (
     <div className={styles.levelDots} aria-label={`習熟度: ${levelLabels[level - 1]}`}>

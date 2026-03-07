@@ -45,10 +45,10 @@ const engineerCareers: Career[] = [
         desc: 'オンプレミス環境からAWSへの移行を中心に、複数の大規模プロジェクトに参画。',
         tasks: [
             'バックオフィス統合情報管理システム AlmaLinux移行（CentOS 7サポート終了に伴うOS移行、SELinux全サーバー有効化）',
-            'バックオフィスシステム AWS移行（冗長構成設計、Direct Connect/VPC Peering構築）',
+            'バックオフィスシステム AWS移行（冗長構成設計、VPC Peering構築）',
             'ポイントプラットフォームシステム AWS移行（マルチAZ構成、RDS/Redis冗長化）',
         ],
-        tech: 'AWS (EC2, RDS, S3, EFS, CloudWatch, CloudTrail, IAM, VPC), Linux (CentOS, AlmaLinux), Apache, MySQL, SELinux',
+        tech: 'AWS (EC2, RDS, S3, EFS, CloudWatch, CloudTrail, IAM, VPC, CloudFormation, Lambda), Linux (CentOS, AlmaLinux), Apache, MySQL, SELinux',
     },
 ];
 
@@ -114,7 +114,7 @@ const About: React.FC = () => {
                 >
                     <p>
                         製造、貿易、建設と業界を変えながら働いてきました。
-                        その後ITインフラエンジニアに転向し、サーバー運用、AWS移行の設計・構築・運用、Lambdaを用いた自動化などを経験しました。
+                        その後ITインフラエンジニアに転向し、サーバー運用、AWS移行の設計・構築・運用、CloudWatch / CloudTrail / IAM を含む監視・権限管理、Lambdaを用いた自動化などを経験しました。
                         現在は、それらの経験を土台に、ServiceNowでの業務ワークフロー構築やITOM領域に携わることを目指して学習と制作を進めています。
                     </p>
                 </motion.div>
