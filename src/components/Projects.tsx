@@ -15,7 +15,7 @@ interface ProjectType {
     challenge?: string;
     approach?: string;
     result?: string;
-    demoCredentials?: Array<{ label: string; value: string }>;
+    demoInfoNote?: string;
 }
 
 const projects: ProjectType[] = [
@@ -30,12 +30,7 @@ const projects: ProjectType[] = [
         challenge: '5ロールを持つ学校向け業務アプリを、認可・状態管理・ダッシュボード・公開構成まで含めて整理して実装する。',
         approach: 'Django Templates をベースに、views / services / authorization を分けて責務を整理。Inbox Pattern、早期警告、共有メモ、ロールベース認可を組み合わせて、担任が見逃しにくい導線を設計した。',
         result: 'AWS/Terraform で CloudFront / ALB / EC2 / RDS 構成を構築し、pytest を中心にテストを整備。Ruff・mypy による静的解析も取り入れた。',
-        demoCredentials: [
-            { label: '生徒', value: 'student_1_a_01@example.com' },
-            { label: '担任', value: 'teacher_1_a@example.com' },
-            { label: '学年主任', value: 'grade_leader_1@example.com' },
-            { label: '共通PW', value: 'password123' },
-        ],
+        demoInfoNote: 'デモのログイン情報はソースコードの README に記載しています。',
     },
     {
         title: 'Plushie Forest（開発中）',
@@ -148,18 +143,8 @@ const Projects: React.FC = () => {
                                         </a>
                                     )}
                                 </div>
-                                {project.demoCredentials && (
-                                    <div className={styles.credentialsBox}>
-                                        <p className={styles.credentialsTitle}>代表ログイン情報</p>
-                                        <div className={styles.credentialsList}>
-                                            {project.demoCredentials.map((credential, cIndex) => (
-                                                <div key={cIndex} className={styles.credentialItem}>
-                                                    <span className={styles.credentialLabel}>{credential.label}:</span>
-                                                    <code className={styles.credentialValue}>{credential.value}</code>
-                                                </div>
-                                            ))}
-                                        </div>
-                                    </div>
+                                {project.demoInfoNote && (
+                                    <p className={styles.demoInfoNote}>{project.demoInfoNote}</p>
                                 )}
                                 {project.availabilityNote && (
                                     <p className={styles.availabilityNote}>{project.availabilityNote}</p>
