@@ -26,7 +26,7 @@ const skillCategories: { title: string; skills: Skill[] }[] = [
             { name: 'CloudTrail', level: 2 },
             { name: 'IAM', level: 2 },
             { name: 'CloudFormation', level: 2 },
-            { name: 'Lambda', level: 2 },
+            { name: 'AWS Lambda (Node.js)', level: 2 },
             { name: 'Terraform', level: 1 },
             { name: 'Docker', level: 1 },
             { name: 'Apache', level: 2 },
@@ -35,10 +35,10 @@ const skillCategories: { title: string; skills: Skill[] }[] = [
     {
         title: 'アプリケーション開発',
         skills: [
-            { name: 'Python / Django', level: 2 },
-            { name: 'TypeScript / React', level: 2 },
-            { name: 'HTML / CSS', level: 2 },
-            { name: 'PostgreSQL', level: 2 },
+            { name: 'Python / Django', level: 1 },
+            { name: 'TypeScript / React', level: 1 },
+            { name: 'HTML / CSS', level: 1 },
+            { name: 'PostgreSQL', level: 1 },
             { name: 'Git', level: 1 },
         ],
     },
