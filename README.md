@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# ポートフォリオサイト
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+新里浩己が、転職活動で見てもらうために作ったポートフォリオサイトです。
 
-Currently, two official plugins are available:
+公開 URL: https://mysite-git-main-hiroki0107-7181s-projects.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 作成背景
 
-## React Compiler
+職業訓練で React を学んだので、その学習内容を形にしつつ、転職活動で自分の経歴や制作物をまとめて見てもらえる場所を作りたいと思い、このサイトを作りました。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+インフラエンジニアとしてサーバー運用、AWS 移行、変更管理、自動化に関わってきた経験があり、その土台の上でフロントエンドの学習にも取り組んでいます。これまでの経験と、これから伸ばしたい方向の両方をこのサイトにまとめています。
 
-## Expanding the ESLint configuration
+## このサイトで伝えたいこと
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- インフラ運用や AWS 移行を実務でやってきたこと
+- 職業訓練で学んだ React / TypeScript を、実際にサイトとして形にしたこと
+- 自分の経歴や制作物を、相手が追いやすい形で整理して伝えられること
+- これまでの経験と、今後やりたいことがつながっていること
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 主な機能
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- セクションナビゲーション: Hero / 職務経歴 / スキル / 制作物 / 基本情報を 1 ページで移動できる構成
+- テーマ切り替え: ライト / ダークテーマを切り替え、状態を `localStorage` に保持
+- スクロール連動 UI: 進捗バー、表示中セクションのハイライト、トップへ戻る導線を実装
+- 制作物紹介: 各プロジェクトの概要、技術、課題、アプローチ、結果、外部リンクを整理して掲載
+- 連絡導線: メールを中心に、採用側が連絡しやすい情報をまとめて表示
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 技術構成と選定理由
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- React: セクションごとに分けて作れるので、修正しやすい形にしやすかったため
+- TypeScript: props や制作物データの型をはっきりさせて、実装ミスを減らしたかったため
+- Vite: 立ち上がりが軽く、学習中でも開発を進めやすかったため
+- CSS Modules: スタイルをコンポーネント単位で分けて持てるようにするため
+- Framer Motion: 動きを足しつつも、読みづらくならない範囲で見せたかったため
+- Lucide React: アイコンを統一し、視認性を上げるため
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 工夫した点
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- 採用側が短時間で見たい情報を追いやすいように、自己紹介だけで終わらず、経歴と制作物をまとめて見られる並びにした
+- 職務経歴は単なる文章ではなく、役割・担当業務・実績・使用技術を分けて見られるようにした
+- 制作物紹介は、タイトルと技術だけで終わらせず、課題・アプローチ・結果まで読める構成にした
+- スクロール位置に応じたナビゲーションや進捗表示を入れ、長い 1 ページ構成でも見失いにくくした
+- テーマ切り替えやモーションは派手にしすぎず、読みやすさを崩さないように調整した
