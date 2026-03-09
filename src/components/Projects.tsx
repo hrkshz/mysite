@@ -25,7 +25,7 @@ const projects: ProjectType[] = [
         image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop',
         tags: ['Python', 'Django', 'PostgreSQL', 'Bootstrap', 'AWS', 'Terraform', 'pytest'],
         github: 'https://github.com/hrkshz/school_diary',
-        demo: 'https://d11e79eaa3tdud.cloudfront.net',
+        demo: 'https://d38tsdyews51a2.cloudfront.net/',
         time: '100h',
         challenge: '5ロールを持つ学校向け業務アプリを、認可・状態管理・ダッシュボード・公開構成まで含めて整理して実装する。',
         approach: 'Django Templates をベースに、views / services / authorization を分けて責務を整理。Inbox Pattern、早期警告、共有メモ、ロールベース認可を組み合わせて、担任が見逃しにくい導線を設計した。',
