@@ -49,12 +49,19 @@ const Contact: React.FC = () => {
                         <a href="mailto:hiroki0107@gmail.com" className={styles.cardLink}>hiroki0107@gmail.com</a>
                     </div>
 
-                    <div className={`${styles.card} ${styles.cardDisabled}`}>
+                    <div className={styles.card}>
                         <div className={styles.iconBox}>
                             <Github size={24} />
                         </div>
                         <span className={styles.cardLabel}>GitHub</span>
-                        <span className={styles.cardValue}>準備中</span>
+                        <a
+                            href="https://github.com/hrkshz"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className={styles.cardLink}
+                        >
+                            github.com/hrkshz
+                        </a>
                     </div>
                 </motion.div>
             </div>

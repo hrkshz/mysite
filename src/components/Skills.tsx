@@ -58,14 +58,14 @@ const skillCategories: { title: string; skills: Skill[] }[] = [
 ];
 
 const certifications: Certification[] = [
+    { name: 'ServiceNow CSA', date: '2026.03' },
     { name: 'AWS Solutions Architect - Professional', date: '2023.10' },
     { name: 'AWS SysOps Administrator - Associate', date: '2024.12' },
     { name: 'LinuC レベル2', date: '2024.08' },
     { name: 'Google サイバーセキュリティ プロフェッショナル', date: '2024.09' },
     { name: 'Google AI Essentials V1', date: '2024.09' },
-    { name: '貿易実務検定 C級', date: '2005.08' },
     { name: '安全保障輸出管理実務能力認定 Associate', date: '2014.05' },
-    { name: 'ServiceNow CSA', date: '2026/3/31 合格' },
+    { name: '貿易実務検定 C級', date: '2005.08' },
 ];
 
 const levelLabels = ['学習中', '実務経験', '強み'];
