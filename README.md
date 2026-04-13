@@ -41,3 +41,29 @@
 - 制作物紹介は、タイトルと技術だけで終わらせず、課題・アプローチ・結果まで読める構成にした
 - スクロール位置に応じたナビゲーションや進捗表示を入れ、長い 1 ページ構成でも見失いにくくした
 - テーマ切り替えやモーションは派手にしすぎず、読みやすさを崩さないように調整した
+
+## BASIC 認証の切り替え
+
+このサイトの BASIC 認証は `middleware.ts` で制御しています。Vercel の Environment Variables に設定した `ENABLE_BASIC_AUTH` の値で、認証を有効化できます。
+
+- `ENABLE_BASIC_AUTH=true`: BASIC 認証を有効化
+- `ENABLE_BASIC_AUTH=false`: BASIC 認証を無効化
+- `ENABLE_BASIC_AUTH` 未設定: BASIC 認証を無効化
+
+認証を有効にする場合は、あわせて以下の環境変数も設定します。
+
+- `BASIC_AUTH_USER`
+- `BASIC_AUTH_PASSWORD`
+
+Vercel で切り替える手順:
+
+1. Vercel Dashboard で対象プロジェクトを開く
+2. `Settings` -> `Environment Variables` を開く
+3. `ENABLE_BASIC_AUTH` を追加または更新する
+4. 認証を有効にする場合は `BASIC_AUTH_USER` と `BASIC_AUTH_PASSWORD` も設定する
+5. 再デプロイして反映を確認する
+
+運用の想定:
+
+- 本番公開時は `ENABLE_BASIC_AUTH=false` または未設定にする
+- 一時的に閲覧制限したい場合だけ `ENABLE_BASIC_AUTH=true` にする

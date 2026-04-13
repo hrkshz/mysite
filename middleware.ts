@@ -3,6 +3,11 @@ export const config = {
 };
 
 export default function middleware(request: Request) {
+  const basicAuthEnabled = process.env.ENABLE_BASIC_AUTH === 'true';
+  if (!basicAuthEnabled) {
+    return;
+  }
+
   const authorizationHeader = request.headers.get('authorization');
   const unauthorizedResponse = new Response('Basic Auth required', {
     status: 401,
