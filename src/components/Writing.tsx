@@ -38,8 +38,8 @@ const Writing: React.FC = () => {
                     </div>
 
                     <p className={styles.bodyText}>
-                        技術記事として外に出すことで、学習内容を整理しながら理解を深めています。今後は ServiceNow の学習記録や、
-                        AWS 上のシステムと PDI 接続の検証内容を中心に残していく予定です。
+                        技術記事として外に出すことで、学習内容を整理しながら理解を深めています。今後は AWS / Linux / Terraform に加えて、
+                        監視、運用改善、セキュリティ、業務自動化に関する検証内容も継続して発信していく予定です。
                     </p>
 
                     <div className={styles.topicGrid}>
@@ -54,7 +54,7 @@ const Writing: React.FC = () => {
                             <FileText size={18} />
                             <div>
                                 <p className={styles.topicTitle}>今後の発信予定</p>
-                                <p className={styles.topicText}>ServiceNow 学習、PDI 連携、構成検証の記録</p>
+                                <p className={styles.topicText}>クラウド運用、監視設計、セキュリティ、業務改善・自動化の学習記録</p>
                             </div>
                         </div>
                     </div>

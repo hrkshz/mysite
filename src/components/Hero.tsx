@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen } from 'lucide-react';
 import styles from './Hero.module.css';
 
-const heroHighlights = ['インフラ運用', 'AWS移行', '運用改善・自動化'];
+const heroHighlights = ['インフラ運用', 'AWS移行', 'セキュリティ・運用改善'];
 
 const Hero: React.FC = () => {
     return (
@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
                         インフラ運用・AWS移行の実務経験を土台に、
-                        ServiceNow / ITOM 領域へのキャリア転換を目指しています。
+                        クラウド運用、セキュリティ、業務改善・DX推進に取り組んでいます。
                     </motion.p>
                     <motion.div
                         className={styles.highlightList}
