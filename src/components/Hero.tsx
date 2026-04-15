@@ -33,8 +33,8 @@ const Hero: React.FC = () => {
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                        インフラ運用・AWS移行の実務経験を土台に、
-                        クラウド運用、セキュリティ、業務改善・DX推進に取り組んでいます。
+                        インフラ運用・AWS 移行の実務経験をベースに、
+                        クラウド・セキュリティ・運用改善の分野で次のキャリアを築いていきたいと考えています。
                     </motion.p>
                     <motion.div
                         className={styles.highlightList}

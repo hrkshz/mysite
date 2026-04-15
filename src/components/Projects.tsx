@@ -25,7 +25,7 @@ const projects: ProjectType[] = [
         description: '中学校向けの連絡帳管理 Web アプリ。生徒の体調・メンタル・振り返りを記録し、担任が優先度順に状況を確認できるよう設計。共有メモや学年・学校向けダッシュボードまで実装。',
         tags: ['Python', 'Django', 'PostgreSQL', 'Bootstrap', 'AWS', 'Terraform', 'Docker', 'GitHub Actions', 'CloudWatch', 'pytest'],
         github: 'https://github.com/hrkshz/school_diary',
-        demo: 'https://d38tsdyews51a2.cloudfront.net/',
+        demo: 'https://d32ouy29llzyb9.cloudfront.net/',
         status: '運用改善中',
         challenge: '5ロールの認可設計からインフラ構築・CI/CD・監視まで、開発と運用の両面を一人で設計・改善する。',
         approach: 'Django Templates をベースに、views / services / authorization を分けて責務を整理。Inbox Pattern、早期警告、共有メモ、ロールベース認可を組み合わせて、担任が見逃しにくい導線を設計した。インフラは Terraform の state 分離で再構築可能な設計とし、GitHub Actions では OIDC 認証でアクセスキーを使わないデプロイを構築した。',
